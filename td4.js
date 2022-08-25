@@ -19,3 +19,4 @@ function afficheVille() {
 	  villes[i].style.display= "none";
     }
   }
+}
