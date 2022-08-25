@@ -3,6 +3,32 @@
 	<head>
 	  <meta charset="UTF-8">
 	  <link rel="stylesheet" href="td4.css" />
+	  <script type="text/javascript" src="td4.js"> </script>
+	  <script>
+		
+function afficheVille() {
+  // 1. Récupération de la valeur courante du select, 
+  // soit l'id de l'option sélectionnée 
+  let nomVilleChoisie = document.getElementById("choixVille").value;
+
+  // 2. Récupération de la liste de toutes les div correspondant 
+  // à une div de météo 
+  let villes = document.getElementsByClassName("city");
+
+  // 3. Parcours de la liste des div météo 
+  // On cache celles qui ne sont pas sélectionnées.
+ 
+  for (i=0; i<villes.length; i++) {
+    if (villes[i].id == nomVilleChoisie) {
+      // garder l'element visible -> ELEMENT.style.display= "none";
+	  villes[i].style.display= "";
+    } else {
+      // cacher l'element -> ELEMENT.style.display= "";
+	  villes[i].style.display= "none";
+    }
+  }
+}
+	  </script>
 	</head>
 	<body>
 		<header>
@@ -10,19 +36,25 @@
 			<h2>TD n°4 Technologies web – Application météo </h2>
 			<br/>
 		</header>
-		<br/>
+		<p> Choisir une ville : 
+			<select id="choixVille" name="choixVille" onChange="afficheVille()">
+				<option value="Niort">Niort</option>
+				<option value="Rio">Rio de Janeiro</option>
+				<option value="Reykjavik">Reykjavik</option>
+			</select>
+		</p>
 		<div class="flex">
-			<div class="flex1">
+			<div class="flex1 city" id="Niort">
 				<h2>Niort</h2>
 				<p>12°, pluvieux</p>
 				<img src="pluvieux.png" width="20%"/>
 			</div>
-			<div class="flex1">
+			<div class="flex1 city" id="Rio" >
 				<h2>Rio de Janeiro</h2>
 				<p>29°, orageux</p>
 				<img src="orageux.png" width="20%"/>
 			</div>
-			<div class="flex1">
+			<div class="flex1 city" id="Reykjavik">
 				<h2>Reykjavik</h2>
 				<p>-10°, ensoleillé</p>
 				<img src="ensoleille.png" width="20%"/>
