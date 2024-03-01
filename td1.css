@@ -1,0 +1,40 @@
+header 
+{
+	font-family: Arial;
+	background-color:black;
+	color:white;
+	text-align: center;
+}
+
+footer 
+{
+	background-color:lightgrey;	
+}
+
+/* EX3 */
+.flex{
+	display:flex;
+	justify-content:space-evenly;
+}
+
+.flex div{
+	display:flex;
+	justify-content:space-evenly;	
+}
+
+.ville p,h2,img{
+	display:flex;
+	margin:10px 10px 10px 10px;
+	flex-direction : column;
+	justify-content:center;
+}
+.cadre {
+    width: 400px; /* Largeur du cadre */
+    height: 100px; /* Hauteur du cadre */
+    border: 2px solid #000; /* Bordure de 2 pixels solide noire */
+    border-radius: 10px; /* Coins arrondis de 10 pixels */
+    padding: 20px; /* Espace intérieur de 20 pixels */
+    background-color: gainsboro;/*#f0f0f0;  Couleur de fond */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Ombre portée */
+}
+
